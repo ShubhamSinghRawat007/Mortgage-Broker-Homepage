@@ -99,7 +99,7 @@ nav {
     align-items: center;
     justify-content: center;
     height: 90vh;
-    background: url('/images/hero-bg.jpg') no-repeat center center/cover;
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
     position: relative;
     text-align: center;
     flex-direction: column;
@@ -385,16 +385,16 @@ nav {
     filter: brightness(1); /* Removes the dark filter on hover */
 } 
 .bg-image1{
-    background: url(/images/img1.jpg) no-repeat center center/cover;
+    background: url(images/img1.jpg) no-repeat center center/cover;
 }
 .bg-image2{
-    background: url(/images/img2.jpg) no-repeat center center/cover;
+    background: url(images/img2.jpg) no-repeat center center/cover;
 }
 .bg-image3{
-    background: url(/images/img3.jpg) no-repeat center center/cover;
+    background: url(images/img3.jpg) no-repeat center center/cover;
 }
 .bg-image4{
-    background: url(/images/img4.jpg) no-repeat center center/cover;
+    background: url(images/img4.jpg) no-repeat center center/cover;
 }
 
 
