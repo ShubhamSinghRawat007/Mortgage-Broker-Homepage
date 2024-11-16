@@ -94,18 +94,19 @@ nav {
 }
 
 /* Hero Section */
+/* Base Styles for Desktop */
 .hero {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh;
+    height: 90vh; /* Default height for desktop */
     background: url('../images/hero-bg.jpg') no-repeat center center/cover;
     position: relative;
     text-align: center;
     flex-direction: column;
     padding: 20px;
-    
 }
+
 .hero::before {
     content: ''; /* Creates a pseudo-element */
     position: absolute;
@@ -119,34 +120,34 @@ nav {
 }
 
 .hero-text h2 {
-
-    position: absolute; /* Position relative to the container */
-    top: 20%; /* Adjust based on how much space you want from the top */
+    position: absolute;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 3rem;
-    color: #ffffff; /* Or a contrasting color depending on the background */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Optional for contrast */
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
-.hero-text p{
+
+.hero-text p {
     position: absolute;
-    top: 30%; /* Place below the heading, adjust based on content */
+    top: 30%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 1.25rem;
-    color: #f0f0f0; /* Lighter color for contrast */
-    width: 80%; /* To control the paragraph width */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+    color: #f0f0f0;
+    width: 80%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     text-align: center;
 }
 
 .hero-btn {
     position: absolute;
-    top: 45%; /* Adjust placement based on content */
+    top: 45%;
     left: 50%;
     transform: translateX(-50%);
     padding: 15px 30px;
-    background-color: #8e44ad; 
+    background-color: #8e44ad;
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -154,54 +155,63 @@ nav {
     cursor: pointer;
     text-align: center;
 }
-.hero-btn:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-}
-/* Media Queries for Responsiveness */
 
-/* Small Devices (Mobile) */
+.hero-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile (Phones) */
 @media (max-width: 480px) {
     .hero {
         height: 100vh; /* Ensure the hero section takes up full screen */
+        padding: 20px 10px; /* Add some padding to prevent overflow */
     }
 
     .hero-text h2 {
         font-size: 1.75rem; /* Smaller font size for the heading */
-        top: 15%; /* Adjust the position for smaller screens */
+        top: 10%; /* Adjust vertical position to avoid overlap */
+        text-align: center; /* Ensure it is centered */
     }
 
     .hero-text p {
         font-size: 1rem; /* Smaller font size for paragraph text */
-        top: 25%; /* Adjust position */
+        top: 25%; /* Adjust vertical position to avoid overlap */
         width: 90%; /* Increase the width of the paragraph */
+        font-weight: 300; /* Lighter weight for better readability */
+        text-align: center;
     }
 
     .hero-btn {
-        top: 35%; /* Adjust button position */
+        top: 40%; /* Adjust button position to avoid overlap */
         padding: 12px 24px; /* Smaller padding for mobile screens */
         font-size: 1rem; /* Smaller font size for the button */
+        border-radius: 25px; /* More rounded button on small screens */
     }
 }
 
 /* Medium Devices (Tablets) */
-@media (max-width: 768px) {
+@media (max-width: 830px) {
     .hero-text h2 {
         font-size: 2.5rem; /* Slightly smaller heading font size for tablets */
-        top: 10%; /* Adjust vertical position */
+        top: 15%; /* Adjust vertical position */
+        text-align: center;
     }
 
     .hero-text p {
         font-size: 1.125rem; /* Smaller font size for the paragraph */
-        top: 28%; /* Adjust vertical position */
+        top: 30%; /* Adjust vertical position to avoid overlap */
         width: 85%; /* Adjust paragraph width */
+        font-weight: 300; /* Lighter weight for better readability */
     }
 
     .hero-btn {
-        top: 40%; /* Adjust button placement */
+        top: 45%; /* Adjust button placement */
         padding: 14px 28px; /* Adjust padding */
         font-size: 1.05rem; /* Adjust font size */
+        border-radius: 25px; /* More rounded button */
     }
 }
+
 
 /* About Section */
 .about {
@@ -236,9 +246,24 @@ nav {
 .about h2 {
     font-size: 36px;
     margin-bottom: 20px;
-    /* color: #333333; */
     color: #f0e158;
     text-align: left;
+    position: relative; /* Required for the pseudo-element */
+}
+
+.about h2::after {
+    content: ''; /* Create the underline */
+    position: absolute;
+    left: 0;
+    bottom: 0; /* Position the underline at the bottom of the text */
+    width: 0; /* Initially hidden */
+    height: 2px; /* Thickness of the underline */
+    background-color: #f0e158; /* Same color as the text */
+    transition: width 0.3s ease-in-out; /* Smooth transition */
+}
+
+.about h2:hover::after {
+    width: 30%; /* Fully visible underline on hover */
 }
 
 .about p {
@@ -361,7 +386,24 @@ nav {
     text-align: left;
     font-size: 36px;
     margin-bottom: 20px;
+    position: relative; /* Required for the pseudo-element */
 }
+
+.projects h2::after {
+    content: ''; /* Creates the underline */
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Position the underline slightly below the text */
+    width: 0; /* Initially hidden */
+    height: 2px; /* Thickness of the underline */
+    background-color: #f0e158; /* Same color as the text */
+    transition: width 0.3s ease-in-out; /* Smooth transition */
+}
+
+.projects h2:hover::after {
+    width: 30%; /* Fully visible underline on hover */
+}
+
 
 .project-list {
     display: grid;
@@ -412,7 +454,24 @@ nav {
     text-align: left;
     font-size: 36px;
     margin-bottom: 20px;
+    position: relative; /* Required for the pseudo-element */
 }
+
+.contact h2::after {
+    content: ''; /* Creates the underline */
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Position the underline slightly below the text */
+    width: 0; /* Initially hidden */
+    height: 2px; /* Thickness of the underline */
+    background-color: #f0e158; /* Same color as the text */
+    transition: width 0.3s ease-in-out; /* Smooth transition */
+}
+
+.contact h2:hover::after {
+    width: 20%; /* Fully visible underline on hover */
+}
+
 .container{
     display: flex;
     justify-content: space-around;
